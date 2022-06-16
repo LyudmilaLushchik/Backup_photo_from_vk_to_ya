@@ -6,11 +6,7 @@ from typing import Callable, Iterator, Union, Optional
 
 class Vk:
     URL = 'https://api.vk.com/method/'
-    user_id = ''
-    user_albums = {}
-    user_album_id = ''
-    user_photos = []
-
+    
     def __init__(self, token):
         '''
         Метод инициализации экземпляра класса по токену вк.
@@ -19,6 +15,10 @@ class Vk:
             'access_token': token,
             'v': '5.131'
         }
+        self.user_id = ''
+        self.user_albums = {}
+        self.user_album_id = ''
+        self.user_photos = []
 
     def get_user_id(self, inp_name: str) -> bool:
         '''

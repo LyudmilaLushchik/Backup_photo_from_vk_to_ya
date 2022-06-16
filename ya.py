@@ -8,7 +8,7 @@ from typing import Callable, Iterator, Union, Optional
 
 class Ya:
     URL = 'https://cloud-api.yandex.net/v1/disk/resources'
-    folder = ''
+    
     def __init__(self, token):
         '''
         Метод инициализации экземпляра класса по токену из полигона Яндекс.Диска.
@@ -18,6 +18,7 @@ class Ya:
             'Content-Type': 'application/json',
             'Authorization': 'OAuth {}'.format(self.token)
         }
+        self.folder = ''
 
     def create_new_folder(self, dir_ya: str) -> bool:
         '''
